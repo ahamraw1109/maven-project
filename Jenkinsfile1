@@ -12,7 +12,7 @@ stage('cloning code')
 steps
 
 {//git 'https://github.com/chaitanyapratap19/maven-project.git'
-	git branch: 'mynewwbranch', url: 'https://github.com/chaitanyapratap19/maven-project.git'
+	git branch: 'mynewwbranch', url: 'https://github.com/ahamraw1109/maven-project.git'
 
 }
 }
@@ -60,8 +60,8 @@ stage('deploy to  tomcat')
 {
 steps
 {
-    sshagent(['tomcat']) {
-	 sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.57.46:/var/lib/tomcat/webapps'
+    sshagent(['0c73d320-7da1-41d7-b79e-bcbf746d71be']) {
+	 sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.12.177:/var/lib/tomcat/webapps'
 						}
 }
 }
